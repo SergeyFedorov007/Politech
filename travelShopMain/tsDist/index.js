@@ -1,15 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.toursDataArray = void 0;
 var tours_1 = require("@rest/tours");
-var modalService_1 = require("@services/modal/modalService");
-function openModal() {
+require("./assets/styles/main.scss");
+var img_1 = require("@services/img/img");
+var general_1 = require("@services/general/general");
+var general_2 = require("./services/general/general");
+exports.toursDataArray = [];
+var imagesStore = img_1.images; // ссылка на изображения нужна чтобы webpack формировал изображения в папке dist
+var tourData = (0, tours_1.getTours)();
+tourData.then(function (data) {
+    console.log("call ");
+    exports.toursDataArray = data;
+    (0, general_2.initToursDivElements)(data);
+});
+// init app
+/*  - перенести все методы ниже в раздел services (сюда импортировать и вызывать)
+-   создать метод initApp который будет здесь вызываться, в теле метода добавить эти имортированные методы
+    - Указать в методах возвращающие типы, типы для параметров, в теле функции также указать типы чтобы не было ошибок
+*/
+function initApp() {
+    (0, general_1.initHeaderTitle)("Туры", "h1");
+    (0, general_1.initFooterTitle)("Туры по всему миру", "h2");
 }
-window["openModal"] = function () {
-    var modal = new modalService_1.ModalService();
-    modal.open('<p>hi</p>');
-};
-window["goToTours"] = function () {
-    window.location.href = "/pages/tours/";
-};
-(0, tours_1.getTours)();
+initApp();
 //# sourceMappingURL=index.js.map

@@ -7,7 +7,7 @@
     "outDir": "./tsDist/",
     "experimentalDecorators": true,
     "baseUrl": "app",
-    "suppressImplicitAnyIndexErrors": true,
+    "suppressImplicitAnyIndexErrors": false,
     "importHelpers": true,
 
     "paths": {
