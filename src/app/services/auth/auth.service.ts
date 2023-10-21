@@ -27,24 +27,34 @@ export class AuthService {
     return false;
   }
 
-  /*  checkUser(user: IUser): string {
-    const usersString = window.localStorage.getItem('users');
-    if (usersString) {
-      const users: IUser[] = JSON.parse(usersString) as IUser[];
-      // Поиск пользователя по логину
-      const foundUser = users.find((u) => u.login === user.login);
-      if (foundUser) {
-        if (foundUser.psw === user.psw) {
-          return 'success'; // Успешная авторизация
-        } else {
-          return 'incorrectPassword'; // Некорректный пароль
-        }
-      } else {
-        return 'incorrectLogin'; // Некорректный логин
-      }
-    }
-    return 'notFound'; // Пользователь не найден
-  }*/
+
+/*  if (userInStore.login === user.login && userInStore.psw === user.psw) {
+  return true; // Успешная авторизация
+} else {
+  return false; // Неправильный логин или пароль
+}
+  */
+
+
+  //   checkUser(user: IUser): string {
+  //   const usersString = window.localStorage.getItem('users');
+  //   if (usersString) {
+  //     const users: IUser[] = JSON.parse(usersString) as IUser[];
+  //
+  //     // Поиск пользователя по логину
+  //     const foundUser = users.find((u) => u.login === user.login);
+  //     if (foundUser) {
+  //       if (foundUser.psw === user.psw) {
+  //         return 'success'; // Успешная авторизация
+  //       } else {
+  //         return 'incorrectPassword'; // Некорректный пароль
+  //       }
+  //     } else {
+  //       return 'incorrectLogin'; // Некорректный логин
+  //     }
+  //   }
+  //   return 'notFound'; // Пользователь не найден
+  // }
 
   setUser(user: IUser): void {
     const isUserExist = this.usersStorage.find(

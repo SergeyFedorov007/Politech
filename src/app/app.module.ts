@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RegistrationComponent } from './pages/auth/registration/registration.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { PaginatorModule } from 'primeng/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TicketsComponent } from './pages/tickets/tickets.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
-  declarations: [AppComponent, TicketsComponent],
+  declarations: [
+    AppComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -19,9 +19,11 @@ import { TicketsComponent } from './pages/tickets/tickets.component';
     CheckboxModule,
     InputTextModule,
     PaginatorModule,
+    MenubarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  //exports: [RegistrationComponent],
+  exports: [
+  ],
 })
 export class AppModule {}

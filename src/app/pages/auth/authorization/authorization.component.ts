@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth/auth.service';
 import { IUser } from '../../../models/users';
 import { MessageService } from 'primeng/api';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-authorization',
@@ -18,7 +19,9 @@ export class AuthorizationComponent implements OnInit {
   authTextButton: string;
   constructor(
     private authService: AuthService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router,
+    // private route: ActivatedRoute
   ) {} // dependency injection
 
   ngOnInit(): void {
@@ -83,10 +86,11 @@ export class AuthorizationComponent implements OnInit {
       login: this.login,
     };
     if (this.authService.checkUser(authUser)) {
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Авторизация успешно пройдена',
-      });
+      this.router.navigate(['tickets/tickets-list']);
+      // this.messageService.add({
+      //   severity: 'success',
+      //   summary: 'Авторизация успешно пройдена',
+      // });
     } else {
       this.messageService.add({
         severity: 'warn',

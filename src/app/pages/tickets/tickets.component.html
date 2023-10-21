@@ -1,1 +1,19 @@
-<p>tickets works!</p>
+<div class="d-flex flex-column h-100">
+    <header>
+      <app-header></app-header>
+    </header>
+    <div class="main-content d-flex h-100">
+      <div class="flex-grow-1">
+        <router-outlet></router-outlet>
+      </div>
+      <app-aside></app-aside>
+    </div>
+    <footer>
+      <app-footer></app-footer>
+    </footer>
+
+</div>
+
+
+
+
