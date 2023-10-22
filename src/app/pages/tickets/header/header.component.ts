@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  items:MenuItem[]
+export class HeaderComponent implements OnInit, OnDestroy {
+  items:MenuItem[];
+  time:Date;
+  private timerInterval:number
 
   constructor() { }
 
@@ -30,7 +32,16 @@ export class HeaderComponent implements OnInit {
       //   ]
       //
       // }
-    ]
+    ];
+    this.timerInterval = window.setInterval(() => {
+      this.time = new Date()
+    }, 1000)
+
+  }
+  ngOnDestroy():void {
+if (this.timerInterval){
+  window.clearInterval(this.timerInterval);
+}
   }
 
 }

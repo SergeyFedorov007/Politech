@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-authorization',
   templateUrl: './authorization.component.html',
-  styleUrls: ['./authorization.component.css'],
+  styleUrls: ['./authorization.component.scss'],
 })
 export class AuthorizationComponent implements OnInit {
   loginText = 'Login';

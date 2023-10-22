@@ -7,6 +7,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PaginatorModule } from 'primeng/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarModule } from 'primeng/menubar';
+import {AuthService} from "./services/auth/auth.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,8 +22,9 @@ import { MenubarModule } from 'primeng/menubar';
     InputTextModule,
     PaginatorModule,
     MenubarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   exports: [
   ],

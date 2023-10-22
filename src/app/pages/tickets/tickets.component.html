@@ -1,9 +1,10 @@
 <div class="d-flex flex-column h-100">
     <header>
-      <app-header></app-header>
+      <app-header>
+      </app-header>
     </header>
-    <div class="main-content d-flex h-100">
-      <div class="flex-grow-1">
+    <div class="main-content">
+      <div class="overflow-auto h-100">
         <router-outlet></router-outlet>
       </div>
       <app-aside></app-aside>
@@ -14,6 +15,9 @@
 
 </div>
 
+
+<!--<div class="flex-grow-1">-->
+<!--<div class="main-content d-flex h-100 p-3">-->
 
 
 
