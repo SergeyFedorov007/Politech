@@ -1,1 +1,10 @@
-<p>aside works!</p>
+<div class="mb-2">
+  Тип меню:
+</div>
+  <p-dropdown [options]="menuTypes"
+              [(ngModel)]="selectedMenuType"
+              optionLabel="label"
+              (onChange)="changeType($event)">
+  </p-dropdown>
+
+

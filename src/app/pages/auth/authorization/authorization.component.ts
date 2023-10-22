@@ -3,6 +3,7 @@ import { AuthService } from '../../../services/auth/auth.service';
 import { IUser } from '../../../models/users';
 import { MessageService } from 'primeng/api';
 import { ActivatedRoute, Router } from '@angular/router';
+import {UserService} from "../../../services/user/user.service";
 
 @Component({
   selector: 'app-authorization',
@@ -21,6 +22,7 @@ export class AuthorizationComponent implements OnInit {
     private authService: AuthService,
     private messageService: MessageService,
     private router: Router,
+    private userService: UserService
     // private route: ActivatedRoute
   ) {} // dependency injection
 
@@ -87,6 +89,7 @@ export class AuthorizationComponent implements OnInit {
     };
     if (this.authService.checkUser(authUser)) {
       this.router.navigate(['tickets/tickets-list']);
+      this.userService.setUser(authUser)
       // this.messageService.add({
       //   severity: 'success',
       //   summary: 'Авторизация успешно пройдена',

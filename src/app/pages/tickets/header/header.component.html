@@ -3,8 +3,17 @@
   <div class="flex-grow-1">
     <p-menubar [model]="items"></p-menubar>
   </div>
+
+  <div class="user-block">
+    <ng-container  *ngIf="user">
+      <p>Welcome: {{user.login}}</p>
+    </ng-container>
+  </div>
+
+
   <div class="time-block">
     <div> {{time | date: 'HH:mm:ss'}}</div>
     <p class="timer-day p-0 m-0">{{time | date: 'EEEE'}}</p>
   </div>
+
 </div>
